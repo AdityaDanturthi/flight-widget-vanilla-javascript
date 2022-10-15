@@ -3,7 +3,7 @@ const tableBody = document.getElementById('table-body')
 let flights = [
     {
         time: "08:11",
-        destination: 'Toronto',
+        destination: 'TORONTO',
         flight: "AC 211",
         gate: "60",
         remarks: "ON TIME"
@@ -50,16 +50,17 @@ function populateTable() {
             const tableCell = document.createElement("td")
             const word = Array.from(flight[flightDetail])
             
-            for (const letter of word) {
+            for (const [index,letter] of word.entries()) {
                 const letterElement = document.createElement('div')
-                letterElement.classList.add('flip')
-                letterElement.textContent = letter
-                tableCell.append(letterElement)
+                
+                setTimeout(() => {
+                    letterElement.classList.add('flip')
+                    letterElement.textContent = letter
+                    tableCell.append(letterElement)
+                }, 100 * index)
             }
-
             tableRow.append(tableCell)
         }
-
         tableBody.append(tableRow)
     }
 }
