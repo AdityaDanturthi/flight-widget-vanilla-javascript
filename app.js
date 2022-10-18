@@ -42,6 +42,10 @@ let flights = [
     }
 ]
 
+const destinations = ['TOKYO', 'FRANKFURT', 'DUBAI', 'LONDON']
+const remarks = ['ON TIME', 'DELAYED', 'CANCELLED']
+const hour = 15
+
 function populateTable() {
     for (const flight of flights) {
         const tableRow = document.createElement("tr")
@@ -67,3 +71,27 @@ function populateTable() {
 
 
 populateTable()
+
+function generateRandomLetter() {
+
+}
+
+function shuffleUp() {
+  flights.shift()
+  flights.push( {
+    time: generateTime(),
+    destination: destinations[Math.floor(Math.random() * destinations.length)],
+    flight: "DXB 201",
+    gate: "A 19",
+    remarks: remarks[Math.floor(Math.random() * remarks.length)]
+  })
+}
+
+
+
+
+
+
+
+
+
