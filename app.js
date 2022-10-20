@@ -72,10 +72,6 @@ function populateTable() {
 
 populateTable()
 
-function generateRandomLetter() {
-
-}
-
 function shuffleUp() {
   flights.shift()
   flights.push( {
